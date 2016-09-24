@@ -1,9 +1,14 @@
+
 Rails.application.routes.draw do
 
-
-
     get 'login' => 'session#new'
+    post 'login' => 'session#create'
 
+    get 'csgo' => 'tournament#csgo'
+    get 'hs' => 'tournament#hs'
+    get 'lol' => 'tournament#lol'
+    get 'aram' => 'tournament#aram'
+    get 'owatch' => 'tournament#owatch'
 
     # The priority is based upon order of creation: first created -> highest priority.
     # See how all your routes lay out with "rake routes".
