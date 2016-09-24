@@ -1,0 +1,11 @@
+<div class="thumbnail">
+    <div style="height:216px;padding:1em;">
+        <%= image_tag img_name, class: "img-responsive", style: "margin-left:auto;margin-right:auto;"%>
+    </div>
+    <div class="caption">
+        <h5><%= game %></h5>
+        <p>
+            <%= link_to "read rules", pdf_url, :class => "btn btn-primary" %>
+        </p>
+    </div>
+</div>

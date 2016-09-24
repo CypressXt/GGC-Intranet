@@ -10,6 +10,10 @@ Rails.application.routes.draw do
     get 'aram' => 'tournament#aram'
     get 'owatch' => 'tournament#owatch'
 
+    get 'rules'  => 'static#rules'
+    get 'planning'  => 'static#planning'
+    get 'map'  => 'static#map'
+
     # The priority is based upon order of creation: first created -> highest priority.
     # See how all your routes lay out with "rake routes".
 
