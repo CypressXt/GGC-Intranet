@@ -8,8 +8,7 @@ set :repo_url, 'git@github.com:CypressXt/GGC-Intranet.git'
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-# set :deploy_to, '/var/www/my_app_name'
-set :deploy_to, '/home/cypress/www/GGC-Intranet'
+set :deploy_to, '/home/cypress/www/moveOn'
 
 # Default value for :scm is :git
 # set :scm, :git
@@ -25,14 +24,36 @@ set :deploy_to, '/home/cypress/www/GGC-Intranet'
 # set :pty, true
 
 # Default value for :linked_files is []
-append :linked_files, 'config/database.yml', 'config/secrets.yml'
-
+set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
 
 # Default value for linked_dirs is []
-# append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system'
+# set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system')
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
+
+namespace :deploy do
+    after :restart, :clear_cache do
+        on roles(:web), in: :groups, limit: 3, wait: 10 do
+            # Here we can do anything such as:
+            # within release_path do
+            #   execute :rake, 'cache:clear'
+            # end
+            execute "/home/cypress/restart_puma_ggc.sh"
+        end
+    end
+end
+
+desc 'Runs rake db:seed'
+task :seed do
+    on primary fetch(:migration_role) do
+        within release_path do
+            with rails_env: fetch(:rails_env) do
+                execute :rake, "db:seed"
+            end
+        end
+    end
+end
