@@ -48,6 +48,8 @@ group :development do
     gem 'spring'
     gem 'capistrano'
     gem 'capistrano-rails'
+    gem 'capistrano-bundler'
+    gem 'capistrano-rvm'
     gem "highline"
 end
 
