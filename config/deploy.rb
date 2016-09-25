@@ -8,7 +8,7 @@ set :repo_url, 'git@github.com:CypressXt/GGC-Intranet.git'
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, '/home/cypress/www/moveOn'
+set :deploy_to, '/home/cypress/www/GGC-Intranet'
 
 # Default value for :scm is :git
 # set :scm, :git
