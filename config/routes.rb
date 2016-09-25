@@ -1,8 +1,5 @@
-
 Rails.application.routes.draw do
-
-    get 'login' => 'session#new'
-    post 'login' => 'session#create'
+    root 'welcome#index'
 
     get 'csgo' => 'tournament#csgo'
     get 'hs' => 'tournament#hs'
@@ -13,6 +10,14 @@ Rails.application.routes.draw do
     get 'rules'  => 'static#rules'
     get 'planning'  => 'static#planning'
     get 'map'  => 'static#map'
+
+    resources :user
+
+    # Session -------------------
+    get 'login' => 'session#new'
+    post 'login' => 'session#create'
+    delete 'logout' => 'session#destroy'
+    # ---------------------------
 
     # The priority is based upon order of creation: first created -> highest priority.
     # See how all your routes lay out with "rake routes".

@@ -1,8 +1,8 @@
 class User < ActiveRecord::Base
     attr_accessor :password_confirmation
-    validates :username, :email, :password, :password_confirmation, presence: true
+    validates :nickname, :email, :password, :password_confirmation, presence: true
     validates :password, confirmation: true
-    validates :username, length: { in: 4..20 }
+    validates :nickname, length: { in: 4..20 }
     validates :email, uniqueness: true
 
     def encrypt_password(password)
