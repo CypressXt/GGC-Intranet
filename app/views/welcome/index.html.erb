@@ -7,7 +7,7 @@
         <%= link_to "New info", new_info_path, :class => "btn btn-primary" %>
     </p>
     <% end %>
-    <div style="max-height: 60vh; overflow-y: scroll;">
+    <div style="max-height:60vh; overflow-y:scroll; overflow-x:hidden;">
         <% @infos.each do |info| %>
         <div class="row">
             <div class="col-md-4">
