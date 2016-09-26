@@ -30,6 +30,15 @@ module SessionHelper
         return false
     end
 
+    def is_admin
+        if current_logged_user != nil
+            if (current_logged_user.admin)
+                return true
+            end
+        end
+        return false
+    end
+
     def must_be_proprietary
         if !is_proprietary
             render_403

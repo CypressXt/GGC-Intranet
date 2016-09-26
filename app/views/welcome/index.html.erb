@@ -1,7 +1,28 @@
-<div class="row">
-    <div class="col-md-8 col-md-offset-2">
-        <div class="page-header">
-            <h1>GL HF @GGC 2016</h1>
+<div class="container-fluid">
+    <div class="page-header">
+        <h1>Lastest infos</h1>
+    </div>
+    <% if is_admin %>
+    <p>
+        <%= link_to "New info", new_info_path, :class => "btn btn-primary" %>
+    </p>
+    <% end %>
+    <div style="max-height: 60vh; overflow-y: scroll;">
+        <% @infos.each do |info| %>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h5><%= info.title.capitalize %></h5>
+                        <%= info.user.nickname.capitalize %>,
+                        <%= l info.created_at %>
+                    </div>
+                    <div class="panel-body">
+                        <%= info.content.html_safe %>
+                    </div>
+                </div>
+            </div>
         </div>
+        <% end %>
     </div>
 </div>

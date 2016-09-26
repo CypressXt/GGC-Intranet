@@ -59,6 +59,13 @@ GEM
     capistrano-rvm (0.1.2)
       capistrano (~> 3.0)
       sshkit (~> 1.2)
+    ckeditor (4.2.0)
+      cocaine
+      orm_adapter (~> 0.5.0)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.8)
+      climate_control (>= 0.0.3, < 1.0)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.1.x)
@@ -110,6 +117,7 @@ GEM
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
+    orm_adapter (0.5.0)
     pkg-config (1.1.7)
     puma (3.6.0)
     rack (1.6.4)
@@ -193,6 +201,7 @@ DEPENDENCIES
   capistrano-bundler
   capistrano-rails
   capistrano-rvm
+  ckeditor
   coffee-rails (~> 4.1.0)
   highline
   jbuilder (~> 2.0)
@@ -201,9 +210,10 @@ DEPENDENCIES
   mysql
   puma
   rails (= 4.2.6)
-  sass-rails (~> 5.0)
+  sass-rails (~> 5.0.6)
   sdoc (~> 0.4.0)
   spring
+  sprockets
   sqlite3
   therubyracer
   turbolinks

@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
     validates :password, confirmation: true
     validates :nickname, length: { in: 4..20 }
     validates :email, uniqueness: true
+    has_many :infos
 
     def encrypt_password(password)
         return Digest::SHA2.new(512).hexdigest(password)
