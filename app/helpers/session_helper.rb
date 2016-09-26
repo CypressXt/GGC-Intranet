@@ -31,12 +31,12 @@ module SessionHelper
     end
 
     def is_admin
-        if current_logged_user != nil
-            if (current_logged_user.admin)
-                return true
-            end
+        if current_logged_user != nil && current_logged_user.admin
+            return true
+        else
+            render_403
+            return false
         end
-        return false
     end
 
     def must_be_proprietary

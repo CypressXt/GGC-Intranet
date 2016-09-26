@@ -1,7 +1,6 @@
 class InfoController < ApplicationController
     before_action :is_admin
 
-
     def index
         @infos = Info.all
     end
