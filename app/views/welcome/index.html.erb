@@ -7,22 +7,24 @@
         <%= link_to "New info", new_info_path, :class => "btn btn-primary" %>
     </p>
     <% end %>
-    <div style="max-height:60vh; overflow-y:scroll; overflow-x:hidden;">
-        <% @infos.each do |info| %>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h5><%= info.title.capitalize %></h5>
-                        <%= info.user.nickname.capitalize %>,
-                        <%= l info.created_at %>
-                    </div>
-                    <div class="panel-body">
-                        <%= info.content.html_safe %>
+    <div class="row">
+        <div class="col-md-4" style="max-height:60vh;overflow-y:scroll; overflow-x:hidden;">
+            <% @infos.each do |info| %>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <strong><%= info.title.capitalize %></strong> |
+                            <%= info.user.nickname.capitalize %>,
+                            <%= l info.created_at %>
+                        </div>
+                        <div class="panel-body">
+                            <%= info.content.html_safe %>
+                        </div>
                     </div>
                 </div>
             </div>
+            <% end %>
         </div>
-        <% end %>
     </div>
 </div>

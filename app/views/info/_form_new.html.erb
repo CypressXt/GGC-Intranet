@@ -5,7 +5,7 @@
 </div>
 <div class="form-group">
     <%= label_tag 'content', "Content" %>
-    <%= f.text_area :content, class: 'form-control ckeditor'   %>
+    <%= f.cktext_area :content, class: 'form-control', ckeditor: { uiColor: '#FFFFFF' }  %>
 </div>
 <div class="form-group">
     <%= f.submit "Create", class: "btn btn-primary" %>
