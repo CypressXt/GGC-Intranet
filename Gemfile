@@ -58,4 +58,5 @@ end
 group :preprod do
     gem 'puma'
     gem 'mysql'
+    gem 'newrelic_rpm'
 end

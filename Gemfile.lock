@@ -114,6 +114,7 @@ GEM
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (3.2.0)
+    newrelic_rpm (3.16.2.321)
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
@@ -208,6 +209,7 @@ DEPENDENCIES
   jquery-rails
   less-rails-bootstrap
   mysql
+  newrelic_rpm
   puma
   rails (= 4.2.6)
   sass-rails (~> 5.0.6)
