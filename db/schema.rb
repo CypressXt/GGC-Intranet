@@ -11,7 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160926053540) do
+ActiveRecord::Schema.define(version: 20161002143748) do
+
+  create_table "animation_participants", force: :cascade do |t|
+    t.string   "team_name"
+    t.integer  "user_id"
+    t.integer  "animation_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "animation_participants", ["animation_id"], name: "index_animation_participants_on_animation_id"
+  add_index "animation_participants", ["user_id"], name: "index_animation_participants_on_user_id"
+
+  create_table "animations", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "user_id"
+    t.integer  "nb_participants"
+    t.datetime "date"
+    t.text     "iframe_url"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "animations", ["user_id"], name: "index_animations_on_user_id"
 
   create_table "infos", force: :cascade do |t|
     t.string   "title"

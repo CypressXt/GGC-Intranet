@@ -15,4 +15,8 @@
 //= require turbolinks
 //= require ckeditor/init
 //= require twitter/bootstrap
+//= require js-routes
+//= require moment
+//= require moment/fr-ch.js
+//= require bootstrap-datetimepicker
 //= require_tree .

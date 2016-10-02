@@ -1,0 +1,10 @@
+$(document).on("turbolinks:load", function () {
+    $('.panel-animation').each(function() {
+        animation_id = $(this).data("animation-id");
+        url =  Routes.animation_path(animation_id);
+        console.log(url+ " " +animation_id);
+        $(this).on("click", function (){
+            window.location.href = url;
+        });
+    });
+});

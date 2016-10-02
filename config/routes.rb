@@ -13,6 +13,13 @@ Rails.application.routes.draw do
 
     resources :user
     resources :info
+    resources :animation do
+        get 'delete'  => 'animation#delete'
+        get 'join' => 'animation_participant#new'
+        post 'create' => 'animation_participant#create'
+        get 'leave' => 'animation_participant#delete'
+        delete 'leave' => 'animation_participant#destroy'
+    end
 
     # Session -------------------
     get 'login' => 'session#new'

@@ -1,0 +1,59 @@
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="page-header">
+            <div class="row">
+                <div class="col-md-10">
+                    <h1>
+                        <%= @animation.name.capitalize %>
+                        <small><%= @animation.nb_participants %> places ,</small>
+                        <small><%= l @animation.date %> </small>
+                    </h1>
+                </div>
+                <div class="col-md-2" style="margin-top: 20px;margin-bottom: 10px;">
+                    <% if is_admin %>
+                    <%= link_to "delete", animation_delete_path(@animation.id), class: "btn btn-danger" %>
+                    <% end %>
+                    <% if !is_participant %>
+                    <%= link_to "join", animation_join_path(@animation.id), class: "btn btn-primary" %>
+                    <% elsif is_participant %>
+                    <%= link_to "leave", animation_leave_path(@animation.id), class: "btn btn-warning" %>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+        <% flash.each do |key, value| %>
+        <div id="error_explanation" class="alert alert-<%=key%>" role="alert">
+            <p>
+                <%= value %>
+            </p>
+        </div>
+        <% end %>
+        <div class="row">
+            <div class="col-md-8">
+                <div>
+                    <%= @animation.description.html_safe %>
+                </div>
+                <div>
+                    <%= @animation.iframe_url.html_safe %>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Participants <%= @participants.count %>/<%= @animation.nb_participants %> </div>
+                    <div class="panel-body">
+                        <ul>
+                            <% @participants.each do |participant| %>
+                            <li>
+                                <%= participant.user.nickname %>
+                                <% if participant.team_name != "" %>
+                                | <%= participant.team_name %>
+                                <% end %>
+                            </li>
+                            <% end %>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

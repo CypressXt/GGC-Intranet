@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="page-header">
+            <h1>
+                Delete <%= @animation.name.capitalize %> animation ?
+            </h1>
+        </div>
+        <% flash.each do |key, value| %>
+        <div id="error_explanation" class="alert alert-<%=key%>" role="alert">
+            <p>
+                <%= value %>
+            </p>
+        </div>
+        <% end %>
+        <div>
+            <%= form_for @animation, method: :delete do |f| %>
+            <div class="form-group">
+                <%= f.submit "Yes I'm really sure ! Delete this animation plz.", class: "btn btn-danger btn-lg" %>
+            </div>
+            <% end %>
+        </div>
+    </div>
+</div>
