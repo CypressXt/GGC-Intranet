@@ -63,6 +63,7 @@
             <div style="max-height:60vh;overflow-y:scroll; overflow-x:hidden;">
                 <% @your_animation_participation.each do |participation| %>
                 <% animation = participation.animation %>
+                <% if animation %>
                 <div class="row">
                     <div class="col-md-12">
                         <div class="panel panel-default panel-animation" data-animation-id="<%= animation.id %>">
@@ -78,6 +79,7 @@
                         </div>
                     </div>
                 </div>
+                <% end %>
                 <% end %>
             </div>
             <% end %>

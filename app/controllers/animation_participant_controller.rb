@@ -1,5 +1,5 @@
 class AnimationParticipantController < ApplicationController
-    before_action :is_logged_in
+    before_action :must_be_logged
 
     def new
         @current_animation = Animation.find_by(id: params["animation_id"])
