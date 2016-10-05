@@ -61,7 +61,6 @@
             <h4><%= current_logged_user.nickname.capitalize%>'s animations</h4>
             <p style="margin-bottom: 1.65em;"><span class="label label-primary">Your custom planning @GGC-2016</span></p>
             <div style="max-height:60vh;overflow-y:scroll; overflow-x:hidden;">
-                <%= debug @your_animation_participation %>
                 <% @your_animation_participation.each do |participation| %>
                 <% animation = participation.animation %>
                 <% if animation %>
