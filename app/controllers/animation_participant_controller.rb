@@ -11,7 +11,7 @@ class AnimationParticipantController < ApplicationController
 
     def create
         current_animation =  Animation.find_by(id: params["animation_id"])
-        @animation_participant = AnimationParticipant.first_or_create(animation: current_animation,user: current_logged_user)
+        @animation_participant = AnimationParticipant.where(animation: current_animation).where(user: current_logged_user).first_or_create
         @animation_participant.team_name = params["animation_participant"]["team_name"]
         if @animation_participant.save
             flash[:success] = "Nice, you joined the "+current_animation.name+" animation successfully !"
