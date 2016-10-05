@@ -1,0 +1,5 @@
+<%= form_for @animation_participant, url: {action: "kicked"}, :method => :delete, html: {class: "form-horizontal"} do |f| %>
+<div class="form-group">
+    <%= f.submit "Yes, kick "+@animation_participant.user.nickname.capitalize+"!", class: "btn btn-danger btn-lg" %>
+</div>
+<% end %>

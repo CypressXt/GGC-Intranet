@@ -19,7 +19,7 @@ class AnimationController < ApplicationController
     def show
         @animation = Animation.find_by(id: params[:id])
         if @animation
-            @participants = @animation.animation_participants
+            @participants = @animation.animation_participants.order(created_at: :asc)
             render 'show'
         else
             render_404

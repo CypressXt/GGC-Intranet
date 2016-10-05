@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="page-header">
+            <h1>Kick <%= @animation_participant.user.nickname.capitalize %> ?</h1>
+        </div>
+        <% flash.each do |key, value| %>
+        <div id="error_explanation" class="alert alert-<%=key%>" role="alert">
+            <p>
+                <%= value %>
+            </p>
+        </div>
+        <% end %>
+        <%= render 'form_kick' %>
+    </div>
+</div>

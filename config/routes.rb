@@ -19,6 +19,8 @@ Rails.application.routes.draw do
         post 'create' => 'animation_participant#create'
         get 'leave' => 'animation_participant#delete'
         delete 'leave' => 'animation_participant#destroy'
+        get 'kick/:participant_id' => 'animation_participant#kick', as: :kick_participant
+        delete 'kick/:participant_id' => 'animation_participant#kicked', as: :kicked_participant
     end
 
     # Session -------------------

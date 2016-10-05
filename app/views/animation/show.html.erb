@@ -11,14 +11,14 @@
                 </div>
                 <div class="col-md-2" style="margin-top: 20px;margin-bottom: 10px;">
                     <% if is_admin %>
-                        <%= link_to "delete", animation_delete_path(@animation.id), class: "btn btn-danger" %>
+                    <%= link_to "delete", animation_delete_path(@animation.id), class: "btn btn-danger" %>
                     <% end %>
                     <% if is_logged_in %>
-                        <% if !is_participant %>
-                            <%= link_to "join", animation_join_path(@animation.id), class: "btn btn-primary" %>
-                        <% elsif is_participant %>
-                            <%= link_to "leave", animation_leave_path(@animation.id), class: "btn btn-warning" %>
-                        <% end %>
+                    <% if !is_participant %>
+                    <%= link_to "join", animation_join_path(@animation.id), class: "btn btn-primary" %>
+                    <% elsif is_participant %>
+                    <%= link_to "leave", animation_leave_path(@animation.id), class: "btn btn-warning" %>
+                    <% end %>
                     <% end %>
                 </div>
             </div>
@@ -49,6 +49,9 @@
                                 <%= participant.user.nickname %>
                                 <% if participant.team_name != "" %>
                                 | <%= participant.team_name %>
+                                <% end %>
+                                <% if is_admin %>
+                                | <%= link_to "kick", animation_kick_participant_path(@animation.id, participant.id), class: "btn btn-danger btn-xs" %>
                                 <% end %>
                             </li>
                             <% end %>
