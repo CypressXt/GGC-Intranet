@@ -1,6 +1,5 @@
 class StaticController < ApplicationController
 
-
     def rules
     end
 
@@ -8,5 +7,8 @@ class StaticController < ApplicationController
     end
 
     def map
+    end
+
+    def partners
     end
 end

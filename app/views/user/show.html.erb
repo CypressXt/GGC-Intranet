@@ -3,5 +3,15 @@
         <div class="page-header">
             <h1>Hi <%=current_logged_user.nickname %></h1>
         </div>
+        <div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Name: <%= current_logged_user.name.capitalize %></h4>
+                    <h4>Lastname: <%= current_logged_user.lastname.capitalize %></h4>
+                </div>
+                <div class="col-md-6">
+                </div>
+            </div>
+        </div>
     </div>
 </div>

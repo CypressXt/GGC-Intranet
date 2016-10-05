@@ -11,7 +11,4 @@ class TournamentController < ApplicationController
 
     def aram
     end
-
-    def owatch
-    end
 end

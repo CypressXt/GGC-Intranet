@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161002143748) do
+ActiveRecord::Schema.define(version: 20161002175319) do
 
   create_table "animation_participants", force: :cascade do |t|
     t.string   "team_name"
@@ -54,6 +54,8 @@ ActiveRecord::Schema.define(version: 20161002143748) do
     t.datetime "updated_at",                 null: false
     t.string   "nickname"
     t.boolean  "admin",      default: false
+    t.string   "name"
+    t.string   "lastname"
   end
 
 end

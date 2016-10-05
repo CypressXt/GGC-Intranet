@@ -5,11 +5,11 @@ Rails.application.routes.draw do
     get 'hs' => 'tournament#hs'
     get 'lol' => 'tournament#lol'
     get 'aram' => 'tournament#aram'
-    get 'owatch' => 'tournament#owatch'
 
     get 'rules'  => 'static#rules'
     get 'planning'  => 'static#planning'
     get 'map'  => 'static#map'
+    get 'partners' => 'static#partners'
 
     resources :user
     resources :info
