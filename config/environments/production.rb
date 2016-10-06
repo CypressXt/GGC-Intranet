@@ -78,7 +78,6 @@ Rails.application.configure do
     config.active_record.dump_schema_after_migration = false
 
     config.action_mailer.default_url_options = { :host => 'intranet.ggc2016' }
-    config.action_controller.asset_host = "intranet.ggc2016"
 
 
     config.action_mailer.delivery_method = :smtp
