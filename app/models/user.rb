@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
         self.password = passwd
         self.password_confirmation = passwd
         if self.save
-            Register.welcome(self, password)
+            Register.welcome(self, password).deliver_now
         end
     end
 
