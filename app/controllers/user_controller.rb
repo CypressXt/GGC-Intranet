@@ -1,4 +1,6 @@
 class UserController < ApplicationController
+    before_action :is_admin, only: [:new, :create]
+
     def show
         @user = User.find_by(id: params["id"])
         if !@user
