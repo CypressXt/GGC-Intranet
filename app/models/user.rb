@@ -22,7 +22,9 @@ class User < ActiveRecord::Base
         passwd=self.encrypt_password(password)
         self.password = passwd
         self.password_confirmation = passwd
-        self.save
+        if self.save
+            Register.welcome(self, password)
+        end
     end
 
     def generate_token
