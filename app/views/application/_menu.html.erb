@@ -32,8 +32,6 @@
                             <% if is_admin %>
                             <li role="separator" class="divider"></li>
                             <li><%= link_to "New animation", new_animation_path%></li>
-                            <% else %>
-                            <li style="color: #000; padding:1em;">Nothing here...</li>
                             <% end %>
                         </ul>
                     </li>
@@ -41,6 +39,9 @@
                     <li><%= link_to "Map", map_path %></li>
                     <li><%= link_to "Rules", rules_path %></li>
                     <li><%= link_to "Partners", partners_path %></li>
+                    <% if is_admin %>
+                    <li><%= link_to "New user", new_user_path%></li>
+                    <% end %>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <% if is_logged_in %>

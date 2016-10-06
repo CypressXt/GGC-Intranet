@@ -11,9 +11,9 @@ Rails.application.routes.draw do
     get 'map'  => 'static#map'
     get 'partners' => 'static#partners'
 
-    resources :user
-    resources :info
-    resources :animation do
+    resources :user, only: [:show, :new, :create]
+    resources :info, only: [:index, :new, :create]
+    resources :animation, only: [:new, :create, :show, :destroy, :delete] do
         get 'delete'  => 'animation#delete'
         get 'join' => 'animation_participant#new'
         post 'create' => 'animation_participant#create'

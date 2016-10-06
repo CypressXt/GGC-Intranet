@@ -1,0 +1,21 @@
+<%= form_for @user,url: {action: "create"}, :html => {:class => 'form-horizontal'}  do |f| %>
+<div class="form-group">
+    <%= label_tag 'name', "Name" %>
+    <%= f.text_field :name, class: 'form-control', placeholder: "Bob"   %>
+</div>
+<div class="form-group">
+    <%= label_tag 'lastname', "Lastname" %>
+    <%= f.text_field :lastname, class: 'form-control' , placeholder: "Saget"  %>
+</div>
+<div class="form-group">
+    <%= label_tag 'nickname', "Nickname" %>
+    <%= f.text_field :nickname, class: 'form-control' , placeholder: "xxxSagetxxx"  %>
+</div>
+<div class="form-group">
+    <%= label_tag 'email', "Email" %>
+    <%= f.email_field :email, class: 'form-control', placeholder: "bob.saget@gmail.com" %>
+</div>
+<div class="form-group">
+    <%= f.submit "Create", class: "btn btn-info" %>
+</div>
+<% end %>
