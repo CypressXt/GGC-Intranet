@@ -1,5 +1,5 @@
 class Register < ApplicationMailer
-    default from: 'intranet@geneva-gaming-convention.com'
+    default from: Rails.application.secrets.mail_user
 
     def welcome(user, password)
         @user = user
