@@ -78,6 +78,7 @@ Rails.application.configure do
     config.active_record.dump_schema_after_migration = false
 
     config.action_mailer.default_url_options = { :host => 'ggc.cypressxt.net' }
+    config.action_controller.asset_host = "ggc.cypressxt.net"
 
     # ActionMailer Config
     # Setup for production - deliveries, no errors raised

@@ -32,6 +32,7 @@ server 'cypressxt.net', user: 'ggc', roles: %w{app db web}, port: 22107
 # http://capistranorb.com/documentation/getting-started/configuration/
 # Feel free to add new variables to customise your setup.
 
+set :deploy_to, '/home/ggc/GGC-Intranet'
 
 
 # Custom SSH Options
